@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "854904840009",
+    "project_id": "livros123-daniel",
+    "storage_bucket": "livros123-daniel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854904840009:android:2a10c99a8ad2aaf1dcc498",
+        "android_client_info": {
+          "package_name": "com.example.livros"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "854904840009-i1jer9ah84j9k94dth4gvkjcjctore15.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8joUSS9NfprBS1jYQ1CDphYvAg9c9wB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "854904840009-i1jer9ah84j9k94dth4gvkjcjctore15.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

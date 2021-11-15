@@ -16,7 +16,7 @@ class _InclusaoRouteState extends State<InclusaoRoute> {
   var _edAutor = TextEditingController();
   var _edPreco = TextEditingController();
   var _edFoto = TextEditingController();
-  double _edAvaliacao = 0;// avaliação é adicionada depois na avaliação_route
+  double _edAvaliacao = 0; // avaliação é adicionada depois na avaliação_route
 
   final ImagePicker _picker = ImagePicker();
   XFile? _imageFile;
@@ -38,7 +38,6 @@ class _InclusaoRouteState extends State<InclusaoRoute> {
     );
   }
 
-//unsando um Expanded
   Container _body() {
     return Container(
       padding: EdgeInsets.all(16),
@@ -170,16 +169,15 @@ class _InclusaoRouteState extends State<InclusaoRoute> {
     // Create a Reference to the file
     firebase_storage.Reference ref = firebase_storage.FirebaseStorage.instance
         .ref()
-        .child(DateTime.now().microsecondsSinceEpoch.toString()+".jpg");
-
+        .child(DateTime.now().microsecondsSinceEpoch.toString() + ".jpg");
 
     final metadata = firebase_storage.SettableMetadata(
         contentType: 'image/jpeg',
         customMetadata: {'picked-file-path': _imageFile!.path});
 
-      //_imageFile! a esclamação é uma garantia de que a car não vai ser null
-      uploadTask = ref.putFile(File(_imageFile!.path), metadata);
-    
+    //_imageFile! a esclamação é uma garantia de que a car não vai ser null
+    uploadTask = ref.putFile(File(_imageFile!.path), metadata);
+
     //capturando a url da imagem salva
     var imageURL = await (await uploadTask).ref.getDownloadURL();
     _edFoto.text = imageURL.toString();
@@ -242,65 +240,4 @@ class _InclusaoRouteState extends State<InclusaoRoute> {
     _edPreco.text = "";
     _edFoto.text = "";
   }
-
-  // Container _body() {
-  //   return Container(
-  //     padding: EdgeInsets.all(16),
-  //     child: Expanded(
-  //       child: Column(
-  //         children: <Widget>[
-  //           TextFormField(
-  //             controller: _edTitulo,
-  //             keyboardType: TextInputType.name,
-  //             style: TextStyle(
-  //               fontSize: 20,
-  //             ),
-  //             decoration: InputDecoration(labelText: "Título"),
-  //           ),
-  //           TextFormField(
-  //             controller: _edAutor,
-  //             keyboardType: TextInputType.name,
-  //             style: TextStyle(
-  //               fontSize: 20,
-  //             ),
-  //             decoration: InputDecoration(labelText: "Autor"),
-  //           ),
-  //           TextFormField(
-  //             controller: _edPreco,
-  //             keyboardType: TextInputType.number,
-  //             style: TextStyle(
-  //               fontSize: 20,
-  //             ),
-  //             decoration: InputDecoration(labelText: "Preço R\$"),
-  //           ),
-  //           TextFormField(
-  //             controller: _edFoto,
-  //             keyboardType: TextInputType.url,
-  //             style: TextStyle(
-  //               fontSize: 20,
-  //             ),
-  //             decoration: InputDecoration(labelText: "Foto"),
-  //           ),
-  //           SizedBox(
-  //             height: 10,
-  //           ),
-  //           Container(
-  //             height: 40,
-  //             decoration: BoxDecoration(
-  //               color: Colors.blue.withOpacity(0.8),
-  //               borderRadius: BorderRadius.circular(8),
-  //             ),
-  //             child: ElevatedButton(
-  //               onPressed: () {},
-  //               child: Text(
-  //                 "Cadastrar",
-  //                 style: TextStyle(color: Colors.white, fontSize: 18),
-  //               ),
-  //             ),
-  //           ),
-  //         ],
-  //       ),
-  //     ),
-  //   );
-  // }
 }

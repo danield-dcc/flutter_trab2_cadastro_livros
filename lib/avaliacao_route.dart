@@ -105,15 +105,17 @@ class _AvaliacaoRouteState extends State<AvaliacaoRoute> {
           return AlertDialog(
             title: Text('Avaliação Concluida!'),
             content: Text(
-                'Avaliação de ${widget.titulo} foi salva com sucesso!.'),
+                'Avaliação de ${widget.titulo.toString()} foi salva com sucesso!.'),
             actions: <Widget>[
               ElevatedButton(
                   onPressed: () {
-                    // Navigator.of(context).pop();
+
+                 // Navigator.of(context).pop(HomePage());
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => HomePage()),
                     );
+                    //Navigator.pop(context);
                   },
                   child: Text('Ok!')),
             ],
